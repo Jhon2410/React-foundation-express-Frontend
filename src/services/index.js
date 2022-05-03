@@ -3,14 +3,16 @@ import axios from "axios";
 const base_url = "http://localhost:5000"
 
 // Obtener libros
-const obtener_libros = ()=>{
-    return "Libros obtenido"    
+const obtener_libros = async()=>{
+    const data = await axios.get(base_url+ "/biblioteca/");
+    console.log(data.data)
+    return  data.data;  
+    
 }
 
 // Crear libros
 const crear_libros = async(body)=>{
-    console.log(body.get("caratula"))
-    const data = await axios.post(base_url+ "/biblioteca/crear", {body});
+    const data = await axios.post(base_url+ "/biblioteca/crear", body);
     return  data;   
 }
 
