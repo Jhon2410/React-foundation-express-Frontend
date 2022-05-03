@@ -18,7 +18,9 @@ export default function Index() {
     <>
       <NavBar></NavBar>
       <Añadir></Añadir>
-      <hr></hr>
+      <h3 className="text-center">Cantidad de libros  : {libros.length}</h3>
+
+      <hr/>
       <Libreria props = {libros}></Libreria>
     </>
   );
