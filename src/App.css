@@ -5,6 +5,12 @@
 
 }
 
+img{
+  height:250px;
+  object-fit: cover;
+  align-items:center;
+  margin: auto;
+}
 
 .App-logo {
   height: 40vmin;

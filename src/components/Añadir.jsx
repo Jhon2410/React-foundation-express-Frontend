@@ -21,11 +21,11 @@ export default function Añadir() {
     data.append("descripcion", descripcion)
     data.append("caratula", caratula)
     const res = await crear_libros(data)
-    console.log(res);
+    window.location.reload(false);
   };
   return (
     <>
-      <form>
+      <form onSubmit={enviar}>
         <h3 className="text-center">Añadir Nuevo Libro</h3>
         <div className="grid-x grid-padding-x">
           <div className="small-3 cell">
@@ -39,6 +39,7 @@ export default function Añadir() {
               id="middle-label"
               placeholder="Right- and middle-aligned text input"
               onChange={changeT}
+              required
             />
           </div>
         </div>
@@ -55,6 +56,7 @@ export default function Añadir() {
               id="middle-label"
               placeholder="Right- and middle-aligned text input"
               onChange={changeD}
+              required
             />
           </div>
         </div>
@@ -77,19 +79,19 @@ export default function Añadir() {
               id="exampleFileUpload"
               className="show-for-sr"
               onChange={changeC}
+              required
             />
           </div>
         </div>
         <div className="grid-x grid-padding-x text-center align-center">
           <button
             className="text-center margin-horizontal-3 align-center success button"
-            type="button"
+            type="submit"
             data-tooltip
             tabIndex="1"
             title="Los datos seran enviados al servidor."
             data-position="top"
             data-alignment="left"
-            onClick={enviar}
           >
             Guardar
           </button>
